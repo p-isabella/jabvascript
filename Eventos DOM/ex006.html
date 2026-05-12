@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+</head>
+<body>
+
+    <style>
+        div#area {
+            background-color: aquamarine;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 150px;
+        }
+
+        #area:hover {
+            background-color: rgb(183, 255, 232);
+        }
+    </style>
+
+    <div id="area" onclick="clicar()">
+        Interaja...
+    </div>
+
+
+    <script>
+        let area = document.getElementById('area');
+        let contador = 0;
+        area.addEventListener('click', clicar);
+        
+        function clicar(){
+            area.innerText = 'Clicou!';
+            area.style.background = 'pink';
+            contador ++;
+
+            if (contador > 2) {
+                area.innerText = 'Para de clicar!';
+                area.style.background = 'red';
+            }
+            
+        }
+    </script>
+</body>
+</html>
